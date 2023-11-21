@@ -3,10 +3,24 @@ import React from "react";
 const Navbar = () => {
   return (
     <div>
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <nav
+        class="navbar navbar-expand-lg "
+        style={{
+          background: "linear-gradient(-135deg, #c850c0, #4158d0)",
+        }}
+      >
         <div class="container-fluid">
-          <a class="navbar-brand" href="#">
-            Navbar
+          <a
+            class="navbar-brand"
+            href="#"
+            style={{
+              fontSize: "40px",
+              fontFamily: "Poppins,sans-serif",
+              fontWeight: "500",
+              color: "#ffffff",
+            }}
+          >
+            <i class="bi bi-boombox"></i> Musicer
           </a>
           <button
             class="navbar-toggler"
@@ -20,65 +34,94 @@ const Navbar = () => {
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <ul
+              class="navbar-nav me-auto mb-2 mb-lg-0"
+              style={{ marginLeft: "300px" }}
+            >
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#">
-                  Home
-                </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">
-                  Link
-                </a>
-              </li>
-              <li class="nav-item dropdown">
                 <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/home"
+                  style={{
+                    fontSize: "20px",
+                    color: "#ffffff",
+                    fontWeight: "300",
+                    marginRight: "16px",
+                  }}
                 >
-                  Dropdown
+                  <i class="bi bi-house"></i> Home
                 </a>
-                <ul class="dropdown-menu">
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Action
-                    </a>
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Another action
-                    </a>
-                  </li>
-                  <li>
-                    <hr class="dropdown-divider" />
-                  </li>
-                  <li>
-                    <a class="dropdown-item" href="#">
-                      Something else here
-                    </a>
-                  </li>
-                </ul>
               </li>
               <li class="nav-item">
-                <a class="nav-link disabled" aria-disabled="true">
-                  Disabled
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="favourite"
+                  style={{
+                    fontSize: "20px",
+                    color: "#ffffff",
+                    fontWeight: "300",
+                    marginRight: "16px",
+                  }}
+                >
+                  <i class="bi bi-chat-square-heart"></i> Favourite
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/search"
+                  style={{
+                    fontSize: "20px",
+                    color: "#ffffff",
+                    fontWeight: "300",
+                    marginRight: "16px",
+                  }}
+                >
+                  <i class="bi bi-search"></i> Search
+                </a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="/profile"
+                  style={{
+                    fontSize: "20px",
+                    color: "#ffffff",
+                    fontWeight: "300",
+                    marginRight: "16px",
+                  }}
+                >
+                  <i class="bi bi-person-circle"></i> Profile
                 </a>
               </li>
             </ul>
-            <form class="d-flex" role="search">
-              <input
-                class="form-control me-2"
-                type="search"
-                placeholder="Search"
-                aria-label="Search"
-              />
-              <button class="btn btn-outline-success" type="submit">
-                Search
-              </button>
-            </form>
+            <li
+              class="nav-item"
+              style={{ textDecoration: "none", listStyle: "none" }}
+            >
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="#"
+                style={{
+                  fontSize: "20px",
+                  color: "#ffffff",
+                  fontWeight: "700",
+                  //   textDecoration: "none",
+                  //   listStyle: "none",
+                }}
+              >
+                <i
+                  class="bi bi-box-arrow-left"
+                  style={{ fontWeight: "400" }}
+                ></i>{" "}
+                Log Out
+              </a>
+            </li>
           </div>
         </div>
       </nav>

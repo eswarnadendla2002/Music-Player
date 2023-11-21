@@ -3,9 +3,10 @@ import "./login.css";
 const Components = () => {
   return (
     <div>
-      <h1 className="musicer-logo">
+      <br />
+      <h2 className="musicer-logo2">
         <i class="bi bi-boombox">&nbsp;</i>Musicer
-      </h1>
+      </h2>
     </div>
   );
 };
