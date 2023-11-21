@@ -119,6 +119,7 @@ const Search = () => {
             }}
             style={{
               fontSize: "20px",
+              marginTop: "70px",
               background: "linear-gradient(-135deg, #c850c0, #4158d0)",
             }}
           >
