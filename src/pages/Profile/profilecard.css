@@ -115,14 +115,7 @@ main {
     color:gold;
     margin-left: 15px;
 }
-h1 {
-    font-size: 20px;
-    color: #000;
-    font-weight: 600;
-    margin: 12px 0;
-    border-bottom: 4px solid rgba(1, 106, 175, 0.603);
-    width: 10%;
-}
+
 
 .middle-card, footer {
     margin: 5px 25px;

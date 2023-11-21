@@ -1,4 +1,5 @@
 import Home from "../pages/Home/home";
+import MusicPlayer from "../pages/Music_Player/musicplayer";
 import ProfileCard from "../pages/Profile/profilecard";
 import Search from "../pages/Search/search";
 import Signup from "../pages/Signup/signup";
@@ -28,5 +29,9 @@ export const routes = [
   {
     path: "/profile",
     component: ProfileCard,
+  },
+  {
+    path: "/search/album/:id",
+    component: MusicPlayer,
   },
 ];

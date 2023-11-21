@@ -20,12 +20,14 @@
   
   button {
     cursor: pointer;
+    
   }
   
   .search-box {
     display: flex;
     background: linear-gradient(-135deg, #c850c0, #4158d0);
     border-radius: 50px;
+    
   }
   
   .search-box-input {
@@ -34,6 +36,7 @@
     color: #fff;
     /* color: linear-gradient(-135deg, #c850c0, #4158d0); */
     transition: 0.5s;
+    
   }
   
   .search-box-btn {
@@ -44,6 +47,7 @@
     background: white;
     transition: 0.3s;
     border:#c850c0 solid 2px;
+  
   }
   
   .search-box-icon {

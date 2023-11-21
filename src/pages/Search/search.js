@@ -8,6 +8,8 @@ import { useNavigate, useLocation } from "react-router-dom";
 const Search = () => {
   const [data, setData] = useState([]);
   const [search, setSearch] = useState("");
+  const [albums, setAlbums] = useState([]);
+  const [image, setImage] = useState();
   const token = useContext(MyToken);
   const navigate = useNavigate();
   const location = useLocation();
@@ -30,7 +32,8 @@ const Search = () => {
         }
       );
       const searchData = await response.json();
-      setData(searchData);
+      setImage(searchData.albums.items[0].images[0].url);
+      setData(searchData.albums.items[0].id);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -40,6 +43,30 @@ const Search = () => {
     searchHandler();
   }, [search, token]);
 
+  useEffect(() => {
+    fetch(
+      "https://api.spotify.com/v1/albums/" +
+        data +
+        "/tracks" +
+        "?include_groups=album&market=IN&limit=50",
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${token}`,
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        setAlbums(data.items);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, [data]);
+  console.log(albums);
   return (
     <>
       <Navbar />
@@ -63,14 +90,20 @@ const Search = () => {
         </div>
         <Container>
           <Row className="row row-cols-4 ">
-            {data &&
-              data.albums?.items.map((album, i) => (
-                <Card key={i}>
-                  <Card.Img src={album?.images[0]?.url} />
-                  <Card.Body>
-                    <Card.Title>{album?.name}</Card.Title>
-                  </Card.Body>
-                </Card>
+            {albums &&
+              albums.length > 0 &&
+              albums.map((album, i) => (
+                <a
+                  href={`/search/album/${album.id}`}
+                  style={{ textDecoration: "none" }}
+                >
+                  <Card key={i}>
+                    <Card.Img src={image} />
+                    <Card.Body>
+                      <Card.Title>{album?.name}</Card.Title>
+                    </Card.Body>
+                  </Card>
+                </a>
               ))}
           </Row>
         </Container>
