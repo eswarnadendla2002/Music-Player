@@ -1,3 +1,5 @@
+import ArtistRoute from "../pages/Artist-route/ArtistRoute";
+import ArtistAlbumMusic from "../pages/Home/Artists/ArtistAlbumMusic";
 import Home from "../pages/Home/home";
 import MusicPlayer from "../pages/Music_Player/musicplayer";
 import ProfileCard from "../pages/Profile/profilecard";
@@ -33,5 +35,13 @@ export const routes = [
   {
     path: "/search/album/:id",
     component: MusicPlayer,
+  },
+  {
+    path: "/search/tracks/:id",
+    component: ArtistRoute,
+  },
+  {
+    path: "/search/album/music/:id",
+    component: ArtistAlbumMusic,
   },
 ];
